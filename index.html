@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup Form </title>
+    <link  rel="stylesheet" href="style.css">
+    
+
+    <!-- Boxicons CSS -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body> 
+    <section class="container forms " >
+          <!-- login -->
+          <div class="form login">
+            <div class="form-content">
+                <header> Login   </header>
+                <form action="#">
+                     <div class="field input-field">
+                       <input type="name" placeholder="Username" class="input" >
+                     </div>
+                     <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" >
+                        <i class='bx bx-hide icon'></i>
+                      </div>
+                      <div class="link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+                        <div class="field btn">
+                            <button>Login</button>
+                            </div>
+                            <div class="link">
+                                <span>Already have an account? <a href="#"  class="link signup-link">Sign Up</a></span>
+                                </div>
+                </form>
+            </div>
+        </div>
+
+          <!-- Signup -->
+
+          <div class="form signup" >
+            <div class="form-content">
+                <header> Sign Up   </header>
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="name" placeholder="Username" class="input" >
+                      </div>
+                     <div class="field input-field">
+                       <input type="email" placeholder="Email" class="input" >
+                     </div>
+                     <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" >
+                      </div>
+                      <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" class="password" >
+                        <i class='bx bx-hide icon'></i>
+                      </div>
+                        <div class="field btn">
+                            <button>Signup</button>
+                            </div>
+                            <div class="link">
+                                <span>Already have an account? <a href="#"  class="link login-link">Login</a></span>
+                                </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+      <!-- Js code -->
+
+      <script>
+        const formContainer  =  document.querySelector(".forms");
+            links = document.querySelectorAll(".link a")
+            showHide = document.querySelectorAll(".icon");
+       
+       showHide.forEach(eyeIcon => {
+           eyeIcon.addEventListener("click", () => {
+               let passFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+       
+               passFields.forEach(password => {
+                   if(password.type === "password"){
+                       password.type = "text";
+                       eyeIcon.classList.replace("bx-hide", "bx-show")
+                       return;
+                   }
+                   password.type = "password";
+                       eyeIcon.classList.replace("bx-show", "bx-hide")
+               })
+           })
+           
+       });
+            links.forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    formContainer.classList.toggle("show-signup");
+               })
+           })
+           
+       
+            </script>  
+</body>
+</html>
