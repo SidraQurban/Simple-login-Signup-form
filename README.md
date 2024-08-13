@@ -10,6 +10,7 @@ Login Page:
  * Option to show or hide the password.
  * Login button to submit the form.
  * Link to navigate to the sign-up page.
+<br>
    <img width="334" alt="login" src="https://github.com/user-attachments/assets/bd78e65d-6197-4894-a2ce-03b7509a756b">
    <br>
    
